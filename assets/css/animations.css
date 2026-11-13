@@ -1,0 +1,137 @@
+
+/* =========================================
+   ADVANCED ANIMATIONS
+========================================= */
+
+/* Home content animation */
+.home-content {
+    animation: slideInLeft 1s ease both;
+}
+
+.home-image {
+    animation: slideInRight 1s ease both;
+}
+
+/* Section headings */
+.section-heading {
+    animation: fadeInUp 0.8s ease both;
+}
+
+/* Cards */
+.education-card,
+.experience-card,
+.skill-box,
+.project-card,
+.certificate-card {
+    animation: fadeInUp 0.8s ease both;
+}
+
+/* Image animation */
+.image-wrapper {
+    animation: imageGlow 4s ease-in-out infinite alternate;
+}
+
+/* Keyframes */
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes imageGlow {
+    from {
+        box-shadow: 0 0 25px rgba(139, 92, 246, 0.2);
+    }
+    to {
+        box-shadow: 0 0 55px rgba(6, 182, 212, 0.35);
+    }
+}
+
+/* Scroll Reveal Animation */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(35px);
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Sticky Header */
+
+.header.scrolled {
+    background: rgba(8, 13, 26, 0.97);
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* Form Status */
+
+.form-status.success {
+    color: #34d399;
+}
+
+.form-status.error {
+    color: #fb7185;
+}
+
+/* Typing cursor */
+
+.home-content h2::after {
+    content: "|";
+    color: #06b6d4;
+    margin-left: 4px;
+    animation: cursorBlink 0.7s infinite;
+}
+
+@keyframes cursorBlink {
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Reduced motion support */
+
+@media (prefers-reduced-motion: reduce) {
+    .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    .home-content h2::after {
+        animation: none;
+    }
+}
